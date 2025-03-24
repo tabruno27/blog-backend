@@ -92,8 +92,8 @@
                   {% else %}
                       <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Default Image">
                   {% endif %}
-                  <ul class="thumb-info">
-                    <li><a href="#"><i class="ti-user"></i>{{ fresh_posts.author }}</a></li>
+                  <ul class="thumb-info" style="max-width: 550px;">
+                    <li><a href="#"><i class="ti-user"></i>{{ fresh_posts.author}}</a></li>
                     <li><a href="#"><i class="ti-notepad"></i>{{ fresh_posts.published_at|date:"F j, Y" }}</a></li>
                     <li><a href="#"><i class="ti-themify-favicon"></i>{{ fresh_posts.comments_amount }}</a></li>
                   </ul>
