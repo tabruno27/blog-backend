@@ -83,71 +83,27 @@
       <section class="blog-post-area section-margin mt-4">
         <div class="container">
           <div class="row">
+            {% for fresh_posts in fresh_posts %}
             <div class="col-lg-8">
               <div class="single-recent-blog-post">
                 <div class="thumb">
-                  <img class="img-fluid" src="{%static 'img/blog/blog1.png' %}" alt="">
+                  {% if fresh_posts.image_url %}
+                      <img class="img-fluid" src="{{ fresh_posts.image_url }}" alt="">
+                  {% else %}
+                      <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Default Image">
+                  {% endif %}
                   <ul class="thumb-info">
-                    <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                    <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
+                    <li><a href="#"><i class="ti-user"></i>{{ fresh_posts.author }}</a></li>
+                    <li><a href="#"><i class="ti-notepad"></i>{{ fresh_posts.published_at|date:"F j, Y" }}</a></li>
+                    <li><a href="#"><i class="ti-themify-favicon"></i>{{ fresh_posts.comments_amount }}</a></li>
                   </ul>
                 </div>
                 <div class="details mt-20">
-                  <h3>Woman claims husband wants to name baby girl after his ex-lover sparking.</h3>
-                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
+                  <h3>{{ fresh_posts.title }}</h3>
+                  <p>{{ fresh_posts.text }}</p>
                   <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
                 </div>
               </div>
-
-              <div class="single-recent-blog-post">
-                <div class="thumb">
-                  <img class="img-fluid" src="{%static 'img/blog/blog2.png' %}" alt="">
-                  <ul class="thumb-info">
-                    <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                    <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
-                  </ul>
-                </div>
-                <div class="details mt-20">
-                  <h3>Woman claims husband wants to name baby girl after his ex-lover sparking.</h3>
-                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
-                </div>
-              </div>
-
-              <div class="single-recent-blog-post">
-                <div class="thumb">
-                  <img class="img-fluid" src="{%static 'img/blog/blog3.png' %}" alt="">
-                  <ul class="thumb-info">
-                    <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                    <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
-                  </ul>
-                </div>
-                <div class="details mt-20">
-                  <h3>Tourist deaths in Costa Rica jeopardize safe destination reputation all time. </h3>
-                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
-                </div>
-              </div>
-
-              <div class="single-recent-blog-post">
-                <div class="thumb">
-                  <img class="img-fluid" src="{%static 'img/blog/blog4.png' %}" alt="">
-                  <ul class="thumb-info">
-                    <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                    <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
-                  </ul>
-                </div>
-                <div class="details mt-20">
-                <h3>Tourist deaths in Costa Rica jeopardize safe destination reputation all time.  </h3>
-                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
-                </div>
-              </div>
-
 
               <div class="row">
                 <div class="col-lg-12">
@@ -174,6 +130,7 @@
                 </div>
               </div>
             </div>
+            {% endfor %}
 
             <!-- Start Blog Post Siddebar -->
             <div class="col-lg-4 sidebar-widgets">
