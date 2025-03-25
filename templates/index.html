@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sensive Blog - Home</title>
-    <link rel="icon" href="{%static 'img/favicon.png' %}" type="image/png">
-
-    <link rel="stylesheet" href="{%static 'styles.min.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'styles.min.css' %}">
   </head>
   <body>
     <!--================Header Menu Area =================-->
@@ -17,7 +16,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container box_1620">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="index.html"><img src="{%static 'img/logo.png' %}" alt=""></a>
+            <a class="navbar-brand logo_h" href="index.html"><img src="{% static 'img/logo.png' %}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -101,7 +100,7 @@
                 <div class="details mt-20">
                   <h3>{{ fresh_posts.title }}</h3>
                   <p>{{ fresh_posts.text|truncatechars:200 }}</p>
-                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
+                  <a class="button" href="{% url 'post_detail' slug=fresh_posts.slug %}">Read More <i class="ti-arrow-right"></i></a>
                 </div>
               </div>
 
@@ -232,6 +231,6 @@
     </footer>
     <!--================ End Footer Area =================-->
 
-    <script src="{%static 'scripts.js' %}"></script>
+    <script src="{% static 'scripts.js' %}"></script>
   </body>
 </html>
