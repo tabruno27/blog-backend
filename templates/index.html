@@ -34,7 +34,7 @@
 
                 </div>
                 <div class="blog__slide__content">
-                  <h3><a href="#"></a>{{ post.title }}</h3>
+                  <h3><a href="{% url 'post_detail' slug=post.slug %}"></a>{{ post.title }}</h3>
                   <p>{{ post.published_at|date:"F j, Y" }}</p>
                 </div>
               </div>
@@ -54,7 +54,7 @@
               <div class="single-recent-blog-post">
                 <div class="thumb">
                   {% if fresh_posts.image_url %}
-                      <img class="img-fluid" src="{{ fresh_posts.image_url }}" alt="{{ fresh_post.title }}">
+                      <img class="img-fluid" src="{{ fresh_posts.image_url }}" alt="{{ fresh_posts.title }}">
                   {% else %}
                       <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Default Image">
                   {% endif %}
