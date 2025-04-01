@@ -29,12 +29,11 @@
         <div class="row">
           <div class="col-lg-8">
             <div class="main_blog_details">
-               {% if post.image_url %}
-                   <img class="img-fluid" src="{{ post.image_url }}" alt="">
-               {% else %}
-                   <img class="img-fluid" src="{% static 'img/blog/default.png' %}" alt="Default Image">
-               {% endif %}
-
+              {% if post.image_url %}
+                  <img class="img-fluid" src="{{ post.image_url }}" alt="{{ post.title }}">
+              {% else %}
+                  <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Default Image">
+              {% endif %}
               <h4>{{ post.title }}</h4>
               <div class="user_details">
                 <div class="mt-sm-0 mt-3">
