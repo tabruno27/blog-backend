@@ -12,7 +12,7 @@
             <h1>Blog details</h1>
             <nav aria-label="breadcrumb" class="banner-breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
               </ol>
             </nav>
@@ -58,7 +58,6 @@
               </div>
             </div>
 
-
             <div class="comments-area">
               <h4>{{ post.comments|length }} Comments</h4>
               <div class="comment-list">
@@ -79,9 +78,40 @@
                 </div>
                 {% endfor %}
               </div>
+              <div class="comment-list">
+                <div class="single-comment justify-content-between d-flex">
+                  <div class="user justify-content-between d-flex">
+                    <div class="desc">
+                      <h5><a href="#">Maria Luna</a></h5>
+                      <p class="date">December 4, 2017 at 3:12 pm </p>
+                      <p class="comment">
+                          Never say goodbye till the end comes!
+                      </p>
+                    </div>
+                  </div>
+                  <div class="reply-btn">
+                          <a href="" class="btn-reply text-uppercase">reply</a>
+                  </div>
+                </div>
+              </div>
+              <div class="comment-list">
+                <div class="single-comment justify-content-between d-flex">
+                  <div class="user justify-content-between d-flex">
+                    <div class="desc">
+                      <h5><a href="#">Ina Hayes</a></h5>
+                      <p class="date">December 4, 2017 at 3:12 pm </p>
+                      <p class="comment">
+                          Never say goodbye till the end comes!
+                      </p>
+                    </div>
+                  </div>
+                  <div class="reply-btn">
+                          <a href="" class="btn-reply text-uppercase">reply</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
 
           <!-- Start Blog Post Siddebar -->
           <div class="col-lg-4 sidebar-widgets">
@@ -96,7 +126,6 @@
                 </div>
                 <button class="bbtns d-block mt-20 w-100">Subcribe</button>
               </div>
-
 
               <div class="single-sidebar-widget post-category-widget">
                 <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
@@ -180,7 +209,6 @@
       </div>
     </footer>
     <!--================ End Footer Area =================-->
-
     <script src="{%static 'scripts.js' %}"></script>
   </body>
 </html>
