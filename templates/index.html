@@ -32,7 +32,7 @@
                   {% else %}
                     <img class="card-img rounded-0" src="{% static 'img/banner/blog.png' %}" alt="Default Image">
                   {% endif %}
-                </a>  
+                </a>
               </div>
               <div class="blog__slide__content">
                 <h3><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h3>
@@ -60,7 +60,7 @@
                   {% else %}
                     <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="Default Image">
                   {% endif %}
-                </a>  
+                </a>
                 <ul class="thumb-info" style="max-width: 550px;">
                   <li><a href="#"><i class="ti-user"></i>{{ fresh_posts.author }}</a></li>
                   <li><a href="#"><i class="ti-notepad"></i>{{ fresh_posts.published_at|date:"F j, Y" }}</a></li>
